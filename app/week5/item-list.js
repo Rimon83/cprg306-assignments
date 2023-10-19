@@ -38,8 +38,9 @@ export default function ItemList() {
 
   return (
     <section>
+     <h1 className="text-2xl inline-block font-medium">Sort By: </h1>
       <button
-        className={`h-[50px] w-[140px] border-2 rounded-md my-10 mx-5 border-gray-300 text-white ${
+        className={`h-[50px] w-[140px] border-2 rounded-md my-10 mx-5 border-gray-300 inline-block text-white ${
           sortBy === "name" ? "bg-orange-400" : "bg-blue-400"
         }`}
         onClick={nameButton}
