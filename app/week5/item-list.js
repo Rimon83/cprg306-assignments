@@ -84,7 +84,7 @@ export default function ItemList() {
               let singleCategory = groupCategory[category];
 
               return (
-                <div>
+                <div key={category}>
                   <h1 className="text-3xl my-4 capitalize">{category}</h1>
                   {singleCategory.map((item) => {
                     return (
