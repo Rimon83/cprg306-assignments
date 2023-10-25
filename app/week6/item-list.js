@@ -1,9 +1,8 @@
 "use client";
 import Item from "./item.js";
 import { useState } from "react";
-import items from "./items.json";
 
-export default function ItemList() {
+export default function ItemList({items}) {
   const [sortBy, setSortBy] = useState("name");
 
   const nameButton = () => {
@@ -41,7 +40,7 @@ export default function ItemList() {
     <section>
      <h1 className="text-2xl inline-block font-medium">Sort By: </h1>
       <button
-        className={`h-[50px] w-[140px] border-2 rounded-md my-10 mx-5 border-gray-300 inline-block text-white ${
+        className={`h-[50px] w-[100px] border-2 rounded-md my-10 mx-5 border-gray-300 inline-block text-white ${
           sortBy === "name" ? "bg-orange-400" : "bg-blue-400"
         }`}
         onClick={nameButton}
@@ -50,7 +49,7 @@ export default function ItemList() {
         Name
       </button>
       <button
-        className={`h-[50px] w-[140px] border-2 rounded-md my-10 mx-5 border-gray-300 text-white ${
+        className={`h-[50px] w-[100px] border-2 rounded-md my-10 mx-5 border-gray-300 text-white ${
           sortBy === "category" ? "bg-orange-400" : "bg-blue-400"
         }`}
         onClick={CategoryButton}
@@ -58,7 +57,7 @@ export default function ItemList() {
         Category
       </button>
       <button
-        className={`h-[50px] w-[140px] border-2 rounded-md my-10 mx-5 border-gray-300 text-white ${
+        className={`h-[50px] w-[120px] border-2 rounded-md my-10 mx-5 border-gray-300 text-white text-sm ${
           sortBy === "categoryGroup" ? "bg-orange-400" : "bg-blue-400"
         }`}
         onClick={group}
