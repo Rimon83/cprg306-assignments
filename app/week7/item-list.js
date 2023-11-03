@@ -2,7 +2,7 @@
 import Item from "./item.js";
 import { useState } from "react";
 
-export default function ItemList({items}) {
+export default function ItemList({ items, onItemSelect }) {
   const [sortBy, setSortBy] = useState("name");
 
   const nameButton = () => {
@@ -31,21 +31,20 @@ export default function ItemList({items}) {
       a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
     );
   } else if (sortBy === "category") {
-    items.sort((a, b) => a.category.toLowerCase() > b.category.toLowerCase() ? 1 : -1     
+    items.sort((a, b) =>
+      a.category.toLowerCase() > b.category.toLowerCase() ? 1 : -1
     );
   }
-  
 
   return (
     <section>
-     <h1 className="text-2xl inline-block font-medium text-black">Sort By: </h1>
+      <h1 className="text-2xl inline-block font-medium">Sort By: </h1>
       <button
         className={`h-[50px] w-[100px] border-2 rounded-md my-10 mx-5 border-gray-300 inline-block text-white ${
           sortBy === "name" ? "bg-orange-400" : "bg-blue-400"
         }`}
         onClick={nameButton}
       >
-      
         Name
       </button>
       <button
@@ -73,6 +72,7 @@ export default function ItemList({items}) {
                   name={item.name}
                   quantity={item.quantity}
                   category={item.category}
+                  onSelect={() => onItemSelect(item.name)}
                 />
               </li>
             );
@@ -95,6 +95,7 @@ export default function ItemList({items}) {
                           name={item.name}
                           quantity={item.quantity}
                           category={item.category}
+                          onSelect={onItemSelect}
                         />
                       </li>
                     );

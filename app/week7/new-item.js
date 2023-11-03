@@ -25,11 +25,11 @@ const NewItem = ({ onAddItem }) => {
     setCategory("produce");
   }
   return (
-    <div className="text-black">
-      <h1 className="text-2xl font-bold">Add New Item</h1>
+    <main>
+      <h1 className="text-2xl font-bold">Add new item</h1>
       <form
         onSubmit={handleSubmit}
-        className="sm:w-[40%] my-4 w-full bg-black border p-2 flex flex-col gap-3 rounded-md"
+        className="sm:w-[80%] my-4 w-full bg-black border p-2 flex flex-col gap-3 rounded-md"
       >
         <input
           type="text"
@@ -75,7 +75,7 @@ const NewItem = ({ onAddItem }) => {
           className="p-2 rounded bg-blue-500 text-white font-medium hover:bg-blue-600 cursor-pointer mt-3"
         />
       </form>
-    </div>
+    </main>
   );
 };
 
