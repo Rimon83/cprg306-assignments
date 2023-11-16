@@ -4,11 +4,7 @@ import NewItem from "./new-item.js";
 import itemsData from "./items.json";
 import MealIdeas from "./meal-ideas.js";
 import { useUserAuth } from "../_utils/auth-context.js";
-
-
-
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 export default function Week7() {
   const [items, setItems] = useState(itemsData);
