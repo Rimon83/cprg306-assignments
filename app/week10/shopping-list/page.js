@@ -33,7 +33,7 @@ export default function Week7() {
 
   useEffect(() => {
     if (user) {
-      const userId = user.uid;
+      const userId = user?.uid;
       loadItems(userId);
     }
   }, [user]);
@@ -41,14 +41,14 @@ export default function Week7() {
   //edit iem
   const handleEditClick = async (itemId) => {
     //Read one item
-    const UserItem = await getOneItem(user.uid, itemId);
+    const UserItem = await getOneItem(user?.uid, itemId);
     setEditItem(UserItem);
   };
   const handleAddItem = async (item) => {
     //Add item
     if (!item.id) {
       try {
-        const newItemId = await addItem(user.uid, item);
+        const newItemId = await addItem(user?.uid, item);
 
         // Set the id of the new item with the id returned from addItem
         const newItem = { ...item, id: newItemId };
@@ -60,8 +60,8 @@ export default function Week7() {
       }
     } else {
       try {
-        const updateOneItem = await updateItem(user.uid, item.id, item);
-        const userId = user.uid;
+        const updateOneItem = await updateItem(user?.uid, item.id, item);
+        const userId = user?.uid;
         loadItems(userId);
       } catch (error) {
         console.log(error);
@@ -72,8 +72,8 @@ export default function Week7() {
   //Delete item
   const handleDeleteClick = async (itemId) => {
     try {
-      await deleteItem(itemId, user.uid);
-      const userId = user.uid;
+      await deleteItem(itemId, user?.uid);
+      const userId = user?.uid;
       loadItems(userId);
     } catch (error) {
       console.log(error);
