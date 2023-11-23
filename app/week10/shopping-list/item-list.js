@@ -22,7 +22,7 @@ export default function ItemList({
     setSortBy("categoryGroup");
   };
 
-  const groupCategory = items.reduce((group, item) => {
+  const groupCategory = items?.reduce((group, item) => {
     const category = item.category;
     if (!group[category]) {
       group[category] = [];

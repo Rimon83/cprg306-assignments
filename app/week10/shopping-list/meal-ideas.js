@@ -35,7 +35,7 @@ const MealIdeas = ({ name }) => {
     const meals = data.meals;
 
     // combine ingredient and measure values
-    const ingredientValues = meals.reduce((result, obj) => {
+    const ingredientValues = meals?.reduce((result, obj) => {
       const ingredientMeasure = {};
       Object.keys(obj).forEach((key) => {
         if (key.startsWith("strIngredient") && obj[key] !== "") {
