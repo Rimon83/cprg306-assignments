@@ -69,7 +69,7 @@ export default function ItemList({
       </button>
       {sortBy !== "categoryGroup" ? (
         <ul className="flex flex-col gap-4">
-          {items.map((item) => {
+          {items && items.map((item) => {
             return (
               <li className="flex gap-4" key={item.id}>
                 <Item
@@ -110,7 +110,7 @@ export default function ItemList({
         </ul>
       ) : (
         <ul className="flex flex-col gap-4">
-          {Object.keys(groupCategory)
+          {groupCategory && Object.keys(groupCategory)
             .sort()
             .map((category) => {
               let singleCategory = groupCategory[category];
@@ -118,7 +118,7 @@ export default function ItemList({
               return (
                 <div key={category}>
                   <h1 className="text-3xl my-4 capitalize">{category}</h1>
-                  {singleCategory.map((item) => {
+                  {singleCategory && singleCategory.map((item) => {
                     return (
                       <li className="mb-4" key={item.id}>
                         <Item
