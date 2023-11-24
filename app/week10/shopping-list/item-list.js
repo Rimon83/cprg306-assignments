@@ -31,11 +31,11 @@ export default function ItemList({
     return group;
   }, {});
   if (sortBy === "name") {
-    items.sort((a, b) =>
+    items?.sort((a, b) =>
       a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
     );
   } else if (sortBy === "category") {
-    items.sort((a, b) =>
+    items?.sort((a, b) =>
       a.category.toLowerCase() > b.category.toLowerCase() ? 1 : -1
     );
   }
